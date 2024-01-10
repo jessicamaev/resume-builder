@@ -23,11 +23,10 @@ cd resume-builder
 
 # Project Structure
 ```
-Copy code
 resume-builder/
 │
 ├── index.html      # Main HTML file for the resume builder
-├── style.css      # CSS file for styling the application
+├── style.css       # CSS file for styling the application
 ├── script.js       # JavaScript file for handling dynamic functionalities
 ├── README.md       # Project documentation
 ```
@@ -43,5 +42,5 @@ resume-builder/
 - CSS
 - JavaScript
 
-Contributors
-Jessmaecodes
+#Update
+- Working on updating PDF download option and design.
