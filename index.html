@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume Builder</title>
+</head>
+
+<body>
+    <header>
+        <h1>Resume Builder</h1>
+    </header>
+
+    <section id="resume-form">
+        <form id="resumeForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <div id="experience-container">
+                <label for="experience">Experience:</label>
+                <textarea id="experience-textarea" name="experience" rows="4" required></textarea>
+            </div>
+
+            <button type="button" id="add-experience-btn">Add Experience</button>
+
+            <label for="skills">Skills:</label>
+            <input type="text" id="skills" name="skills" required>
+
+            <button type="button" id="update-preview-btn">Update Preview</button>
+        </form>
+    </section>
+
+    <section id="preview">
+        <!-- Display a live preview of the resume -->
+    </section>
+
+    <button id="download-btn">Download Resume</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
