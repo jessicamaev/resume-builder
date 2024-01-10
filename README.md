@@ -42,5 +42,5 @@ resume-builder/
 - CSS
 - JavaScript
 
-#Update
+# Progress/Update
 - Working on updating PDF download option and design.
