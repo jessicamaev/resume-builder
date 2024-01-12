@@ -8,7 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
     updatePreviewBtn.addEventListener('click', function () {
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
-        const skills = document.getElementById('skills').value;
+        const skillsInput = document.getElementById('skills');
+
+        //Split skills by commas and trim whitespace
+        const skills = skillsInput.value.split(',').map(skill => skill.trim()).filter(skill => skill !== '');
+
 
         let experienceHTML = '';
 
@@ -18,13 +22,16 @@ document.addEventListener('DOMContentLoaded', function () {
             experienceHTML += `<p>${experience}</p>`;
         });
 
+        //create skills list 
+        const skillsList = skills.map(skill => `<li>${skill}</li>`).join('');
+
         const previewHTML = `
             <h2>${name}</h2>
             <p>Email: ${email}</p>
             <h3>Experiences: </h3>
             ${experienceHTML}
             <h3>Skills: </h3>
-            <p>${skills}</p>
+            <ul>${skillsList}</ul>
         `;
 
         preview.innerHTML = previewHTML;
