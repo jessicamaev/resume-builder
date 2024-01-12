@@ -28,6 +28,7 @@ button {
     transition: background-color 0.3s;
 }
 
+
 button:hover {
     background-color: #3498db;
 }
@@ -35,7 +36,6 @@ button:hover {
 #resume-form {
     max-width: 600px;
     margin: 20px auto;
-    text-align: center;
 }
 
 label {
@@ -54,6 +54,14 @@ textarea {
 #preview {
     max-width: 600px;
     margin: 0 auto;
+}
+
+#preview .center-align {
+    text-align: center;
+}
+
+#preview .left-align {
+    text-align: left;
 }
 
 

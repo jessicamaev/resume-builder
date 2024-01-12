@@ -16,29 +16,37 @@
     <section id="resume-form">
 
         <form id="resumeForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <div class="center-align">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-            <div id="experience-container">
-                <label for="experience">Experience:</label>
-                <textarea id="experience-textarea" name="experience" rows="4" required></textarea>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
             </div>
 
-            <button type="button" id="add-experience-btn">Add Experience</button>
+            <div class="left-align">
 
-            <label for="skills">Skills:</label>
-            <input type="text" id="skills" name="skills" placeholder="List skills here" required>
 
-            <button type="button" id="update-preview-btn">Update Preview</button>
+                <div class="left-align">
+                    <button type="button" id="add-experience-btn">Add Experience</button>
+                    <div id="experience-forms">
+                        <!-- Dynamic experience forms will be appended here -->
+                    </div>
+
+                    <label for="skills">Skills:</label>
+                    <input type="text" id="skills" name="skills" placeholder="List skills here" required>
+
+                </div>
+
+                <button type="button" id="update-preview-btn">Update Preview</button>
         </form>
 
     </section>
 
     <section id="preview">
-        <!-- Display a live preview of the resume -->
+
     </section>
 
     <button id="download-btn">Download Resume</button>
