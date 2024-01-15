@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updatePreviewBtn.addEventListener('click', function () {
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
         const skillsInput = document.getElementById('skills');
 
         //Split skills by commas and trim whitespace
@@ -26,13 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const description = form.querySelector('[name="description"]').value;
 
             experienceHTML += `
-            <p>
-                ${title}<br>
-                ${organization}<br>
-                ${dates}<br>
+                <b> ${title}, </b> 
+                <i> ${organization} </i>
+                <p>${dates}<br>
                 ${description}
             </p>
         `;
+
         });
 
         // Create skills list
@@ -40,13 +41,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const previewHTML = `
         <div class="center-align">
-            <h2>${name}</h2>
-            <p>Email: ${email}</p>
+            <h1>${name}</h1>
+            <p>${email} | ${phone}</p>
         </div>
         <div class="left-align">
-            <h3>Experiences: </h3>
+            <h2>Work Experience: </h2>
             ${experienceHTML}
-            <h3>Skills: </h3>
+            <h2>Skills: </h2>
             <ul>${skillsList}</ul>
         </div>
     `;
@@ -60,13 +61,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const titleInput = document.createElement('input');
         titleInput.type = 'text';
-        titleInput.placeholder = 'Title of Job';
+        titleInput.placeholder = 'Job title';
         titleInput.name = 'title';
         newExperienceForm.appendChild(titleInput);
 
         const organizationInput = document.createElement('input');
         organizationInput.type = 'text';
-        organizationInput.placeholder = 'Organization Name';
+        organizationInput.placeholder = 'Company/Organization';
         organizationInput.name = 'organization';
         newExperienceForm.appendChild(organizationInput);
 
