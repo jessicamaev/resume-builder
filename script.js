@@ -23,13 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.dynamic-experience-form').forEach(form => {
             const title = form.querySelector('[name="title"]').value;
             const organization = form.querySelector('[name="organization"]').value;
-            const dates = form.querySelector('[name="dates"]').value;
+            const startDate = form.querySelector('[name="startDate"]').value;
+            const endDate = form.querySelector('[name="endDate"]').value;
             const description = form.querySelector('[name="description"]').value;
 
             experienceHTML += `
                 <b> ${title}, </b> 
                 <i> ${organization} </i>
-                <p>${dates}<br>
+                <p>${startDate} to ${endDate}<br>
                 ${description}
             </p>
         `;
@@ -71,11 +72,35 @@ document.addEventListener('DOMContentLoaded', function () {
         organizationInput.name = 'organization';
         newExperienceForm.appendChild(organizationInput);
 
-        const datesInput = document.createElement('input');
-        datesInput.type = 'text';
-        datesInput.placeholder = 'Dates Worked';
-        datesInput.name = 'dates';
-        newExperienceForm.appendChild(datesInput);
+        const dateRangeContainer = document.createElement('div');
+
+        const startDateInput = document.createElement('input');
+        startDateInput.type = 'text';
+        startDateInput.placeholder = 'Start date';
+        startDateInput.name = 'startDate';
+        dateRangeContainer.appendChild(startDateInput);
+
+        const endDateInput = document.createElement('input');
+        endDateInput.type = 'text';
+        endDateInput.placeholder = 'End date';
+        endDateInput.name = 'endDate';
+        dateRangeContainer.appendChild(endDateInput);
+
+        newExperienceForm.appendChild(dateRangeContainer);
+
+        // Initialize Flatpickr inside the dynamic form
+        flatpickr(startDateInput, {
+            mode: 'single',
+            dateFormat: 'Y-m-d',
+            enableTime: false,
+        });
+
+        flatpickr(endDateInput, {
+            mode: 'single',
+            dateFormat: 'Y-m-d',
+            enableTime: false,
+        });
+
 
         const descriptionTextarea = document.createElement('textarea');
         descriptionTextarea.placeholder = 'Short Description';
